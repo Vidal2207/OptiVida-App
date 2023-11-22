@@ -1,6 +1,8 @@
 package com.ramtomka.optivida
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +28,14 @@ class AdaptadorClass(private val context: Context?, private val dataList: List<I
         val item = dataList[position]
         holder.imageView.setImageResource(item.imageResource)
         holder.textView.text = item.text
+
+        // Agregar un listener de clic para abrir el video de YouTube
+        holder.itemView.setOnClickListener {
+            val videoId = item.youtubeVideoId
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:$videoId"))
+            intent.putExtra("VIDEO_ID", videoId)
+            context?.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
