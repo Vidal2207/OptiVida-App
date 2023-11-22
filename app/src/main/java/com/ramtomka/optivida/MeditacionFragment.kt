@@ -40,10 +40,8 @@ class MeditacionFragment : Fragment(R.layout.fragment_meditacion) {
         view.findViewById<Button>(R.id.button8).setOnClickListener {
             cargarFragmentoContenido("Todo")
         }
-
         // Fragmento inicial
         cargarFragmentoContenido("Todo")
-
     }
 
     private fun cargarFragmentoContenido(categoria: String) {

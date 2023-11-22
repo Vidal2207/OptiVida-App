@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        bottomNavigationView.setOnNavigationItemSelectedListener{
+        bottomNavigationView.setOnItemSelectedListener{
             when(it.itemId){
                 R.id.item_meditar -> {
                     cargarFragmento(meditFragment)
