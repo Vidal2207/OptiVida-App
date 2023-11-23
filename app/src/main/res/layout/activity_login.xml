@@ -13,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:hint="Nombre o email"
+        android:hint="Contraseña"
         app:helperText="Obligatorio"
-        app:startIconDrawable="@drawable/ic_person"
+        app:startIconDrawable="@drawable/ic_password"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="167dp"
@@ -32,15 +32,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olvidaste tu contraseña?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilNombre"
+        app:layout_constraintVertical_bias="0.032" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassWord"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
-        android:hint="Contraseña"
+        android:hint="Nombre o email"
         app:helperText="Obligatorio"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:startIconDrawable="@drawable/ic_password"
+        app:startIconDrawable="@drawable/ic_person"
         android:layout_marginTop="300dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -52,40 +64,44 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inicia sesion"
+        android:text="Iniciar sesion"
+        android:textColor="@color/black"
         android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="69dp"
+        android:layout_height="20dp"
+        android:text="Registrase"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/btn"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn"
-        android:layout_width="123dp"
-        android:layout_height="48dp"
+        android:layout_width="377dp"
+        android:layout_height="43dp"
         android:layout_marginTop="232dp"
         android:text="Entrar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="123dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="300dp"
-        android:text="Registrar"
+        android:textAlignment="center"
+        android:textFontWeight="@integer/material_motion_duration_long_2"
+        app:cornerRadius="@dimen/cardview_default_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
