@@ -33,10 +33,11 @@
 
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/OlvidarPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Olvidaste tu contraseña?"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
@@ -88,13 +89,13 @@
         app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.035" />
 
     <Button
         android:id="@+id/btn"
         android:layout_width="377dp"
         android:layout_height="43dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="240dp"
         android:text="Entrar"
         android:textAlignment="center"
         android:textFontWeight="@integer/material_motion_duration_long_2"
