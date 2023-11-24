@@ -22,9 +22,8 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
-        btnOlvidar.setOnClickListener{
-            //INICIAR OTRA ACTIVIDAD
-            val intent = Intent(this,CambiarPass::class.java)
+        btnOlvidar.setOnClickListener {
+            val intent = Intent(this, CambiarPass::class.java)
             startActivity(intent)
             finish()
         }
