@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iconRecordatorio"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="Icono de Recordatorio"
+        android:src="@drawable/baseline_notifications_active_24"
+        android:tint="#6132BA" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:id="@+id/tvTituloRecordatorio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Título del Recordatorio"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvFechaHora"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha y Hora"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:contentDescription="Eliminar Recordatorio"
+        android:src="@drawable/baseline_delete_forever_24"
+        android:tint="#D50404" />
+</LinearLayout>
