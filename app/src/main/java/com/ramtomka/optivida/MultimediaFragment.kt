@@ -55,6 +55,7 @@ class MultimediaFragment : Fragment(R.layout.fragment_multimedia) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        cancionActual = "Vigilia.mp3"
 
         cancionActual = canciones[cancionActualIndex]
         nameCancion.text = cancionActual
