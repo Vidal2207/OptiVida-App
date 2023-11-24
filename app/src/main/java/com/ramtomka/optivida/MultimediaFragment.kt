@@ -5,14 +5,18 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.io.IOException
 
 
 class MultimediaFragment : Fragment(R.layout.fragment_multimedia) {
 
     private val fd by lazy {
-        requireContext().assets.openFd("Vigilia.mp3")
+        requireContext().assets.openFd(cancionActual)
     }
 
     private val mp by lazy {
@@ -28,34 +32,76 @@ class MultimediaFragment : Fragment(R.layout.fragment_multimedia) {
         }
     }
 
+    private val nameCancion by lazy {
+        requireView().findViewById<TextView>(R.id.textCancion)
+    }
+
+    private val canciones by lazy {
+        val nombreFicheros = requireContext().assets.list("")?.toList() ?: listOf()
+        nombreFicheros.filter { it.endsWith(".mp3") }
+    }
+
+    var cancionActualIndex = 0
+        set(value) {
+            field = if (value == -1) {
+                canciones.size - 1
+            } else {
+                value % canciones.size
+            }
+            cancionActual = canciones[field]
+        }
+
+    lateinit var cancionActual: String
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        cancionActual = canciones[cancionActualIndex]
+        nameCancion.text = cancionActual
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recicleViewSongs)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val bottomNavigationView = view.findViewById<BottomNavigationView>(R.id.NavigationViewMusic)
         // Check botón de play
         bottomNavigationView.menu.findItem(R.id.item_play)?.isChecked = true
+
+        val adaptadorCanciones = AdaptadorCanciones(requireContext(), canciones)
+        recyclerView.adapter = adaptadorCanciones
+
+
+        adaptadorCanciones.setOnItemClickListener(object : AdaptadorCanciones.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                cancionActualIndex = position
+                refreshSong()
+                playClicked(bottomNavigationView.menu.findItem(R.id.item_play))
+            }
+        })
 
         // Interacción de los botones de reproducción
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.item_skip_before -> {
                     // CANCIÓN ANTERIOR
-                    Toast.makeText(requireContext(), "BEFORE", Toast.LENGTH_SHORT).show()
+                    cancionActualIndex++
+                    refreshSong()
+                    playClicked(bottomNavigationView.menu.findItem(R.id.item_play))
                 }
                 R.id.item_play -> {
                     // PLAY O PAUSE
-                    playClicked(view, bottomNavigationView.menu.findItem(R.id.item_play))
+                    playClicked(bottomNavigationView.menu.findItem(R.id.item_play))
                 }
                 R.id.item_skip_next -> {
                     // CANCIÓN SIGUIENTE
-                    Toast.makeText(requireContext(), "NEXT", Toast.LENGTH_SHORT).show()
+                    cancionActualIndex--
+                    refreshSong()
+                    playClicked(bottomNavigationView.menu.findItem(R.id.item_play))
                 }
             }
             true
         }
     }
-
-    fun playClicked(view: View, playMenuItem: MenuItem) {
+    fun playClicked(playMenuItem: MenuItem) {
         if (!mp.isPlaying) {
             mp.start()
             playMenuItem.setIcon(R.drawable.baseline_pause_circle_24)
@@ -64,10 +110,19 @@ class MultimediaFragment : Fragment(R.layout.fragment_multimedia) {
             playMenuItem.setIcon(R.drawable.baseline_play_circle_24)
         }
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mp.release()
+    fun refreshSong() {
+        mp.reset()
+        try {
+            val fd = requireContext().assets.openFd(cancionActual)
+            mp.setDataSource(fd.fileDescriptor, fd.startOffset, fd.length)
+            mp.prepare()
+            fd.close()
+            nameCancion.text = cancionActual
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
     }
+
+
 }
 

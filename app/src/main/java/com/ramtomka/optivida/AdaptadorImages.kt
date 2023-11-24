@@ -10,8 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdaptadorClass(private val context: Context?, private val dataList: List<Images>) :
-    RecyclerView.Adapter<AdaptadorClass.ViewHolder>() {
+class AdaptadorImages(private val context: Context?, private val dataList: List<Images>) :
+    RecyclerView.Adapter<AdaptadorImages.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView)

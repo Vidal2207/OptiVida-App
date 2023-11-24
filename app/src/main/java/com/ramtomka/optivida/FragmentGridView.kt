@@ -1,9 +1,7 @@
 package com.ramtomka.optivida
 
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.widget.GridView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -98,7 +96,7 @@ class FragmentGridView : Fragment(R.layout.fragment_grid_view) {
         recyclerView.layoutManager = layoutManager
 
         // Crear adaptador para el RecyclerView
-        val adapter = AdaptadorClass(requireContext(),array)
+        val adapter = AdaptadorImages(requireContext(),array)
         recyclerView.adapter = adapter
     }
 }
