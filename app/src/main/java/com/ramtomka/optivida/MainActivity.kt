@@ -1,7 +1,9 @@
 package com.ramtomka.optivida
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.GridView
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         val multiFragment = MultimediaFragment()
         val recordFragment = RecordatorioFragment()
         val perfilFragment = PerfilFragment()
+
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
@@ -50,5 +53,13 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.containerView,fragment)
             commit()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        // Otros comportamientos personalizados, si es necesario
+        val intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
+
     }
 }

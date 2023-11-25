@@ -19,11 +19,21 @@ class Registrar : AppCompatActivity() {
             //INICIAR OTRA ACTIVIDAD
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
-            finish()
+                //Hace que se cierre la aplicacion si hacemos back
+            //finish()
         }
 
 
 
+
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        // Otros comportamientos personalizados, si es necesario
+        val intent = Intent(this,LoginActivity::class.java)
+        startActivity(intent)
 
     }
 }

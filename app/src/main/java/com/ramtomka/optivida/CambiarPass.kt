@@ -15,6 +15,8 @@ class CambiarPass : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btn)
         val btnReenviar = findViewById<TextView>(R.id.textView5)
 
+
+
         btnLogin.setOnClickListener{
             //INICIAR OTRA ACTIVIDAD
             val intent = Intent(this,MainActivity::class.java)
@@ -29,4 +31,13 @@ class CambiarPass : AppCompatActivity() {
 
 
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        // Otros comportamientos personalizados, si es necesario
+        val intent = Intent(this,LoginActivity::class.java)
+        startActivity(intent)
+
+    }
+
 }

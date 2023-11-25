@@ -21,6 +21,8 @@
 
         <activity android:name=".Registrar" />
 
+        <activity android:name="MeditacionFragment"/>
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
