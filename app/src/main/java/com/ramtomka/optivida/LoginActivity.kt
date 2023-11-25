@@ -15,6 +15,8 @@ class LoginActivity : AppCompatActivity() {
 
         val btnOlvidar = findViewById<TextView>(R.id.OlvidarPass)
 
+        val btnRegistrar = findViewById<TextView>(R.id.registrar)
+
         btnLogin.setOnClickListener{
             //INICIAR OTRA ACTIVIDAD
             val intent = Intent(this,MainActivity::class.java)
@@ -24,6 +26,12 @@ class LoginActivity : AppCompatActivity() {
 
         btnOlvidar.setOnClickListener {
             val intent = Intent(this, CambiarPass::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        btnRegistrar.setOnClickListener {
+            val intent = Intent(this, Registrar::class.java)
             startActivity(intent)
             finish()
         }

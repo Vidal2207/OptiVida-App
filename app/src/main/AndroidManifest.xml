@@ -17,6 +17,10 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".CambiarPass" />
+
+        <activity android:name=".Registrar" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -26,7 +30,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CambiarPass" />
+
 
         <meta-data
             android:name="preloaded_fonts"

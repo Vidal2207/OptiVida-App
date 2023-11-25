@@ -99,12 +99,13 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/registrar"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_marginTop="15dp"
             android:lineSpacingExtra="8sp"
             android:text="Registrarse"
+            android:clickable="true"
             android:textColor="#673AB7"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
