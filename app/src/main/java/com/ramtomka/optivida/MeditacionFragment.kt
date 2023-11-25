@@ -20,7 +20,7 @@ class MeditacionFragment : Fragment(R.layout.fragment_meditacion) {
             cargarFragmentoContenido("Meditar")
         }
         view.findViewById<Button>(R.id.button2).setOnClickListener {
-            cargarFragmentoContenido("Estrés")
+            cargarFragmentoContenido("Estres")
         }
         view.findViewById<Button>(R.id.button3).setOnClickListener {
             cargarFragmentoContenido("Principiantes")
@@ -37,10 +37,11 @@ class MeditacionFragment : Fragment(R.layout.fragment_meditacion) {
         view.findViewById<Button>(R.id.button7).setOnClickListener {
             cargarFragmentoContenido("Zen")
         }
-
+        view.findViewById<Button>(R.id.button8).setOnClickListener {
+            cargarFragmentoContenido("Todo")
+        }
         // Fragmento inicial
-        cargarFragmentoContenido("Meditar")
-
+        cargarFragmentoContenido("Todo")
     }
 
     private fun cargarFragmentoContenido(categoria: String) {

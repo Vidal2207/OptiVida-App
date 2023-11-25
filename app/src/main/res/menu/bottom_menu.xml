@@ -5,7 +5,7 @@
         android:title="Meditar"
         android:icon="@drawable/baseline_auto_awesome_24"/>
     <item android:id="@+id/item_multimedia"
-        android:title="Multimedia"
+        android:title="Música"
         android:icon="@drawable/baseline_music_video_24"/>
     <item android:id="@+id/item_recordatorio"
         android:title="Recordatorio"
