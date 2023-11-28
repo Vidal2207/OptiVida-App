@@ -23,7 +23,14 @@ class Registrar : AppCompatActivity() {
             //finish()
         }
 
+        val btnLog =findViewById<Button>(R.id.btn2)
 
+        btnLog.setOnClickListener {
+            // INICIAR OTRA ACTIVIDAD
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
 
 

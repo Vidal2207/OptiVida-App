@@ -7,136 +7,190 @@
     android:background="@color/white"
     tools:context=".Registrar">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Registro"
-        android:textColor="@color/black"
-        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.5">
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="377dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="544dp"
-        android:text="Registrar"
-        android:textAlignment="center"
-        android:textFontWeight="@integer/material_motion_duration_long_2"
-        app:cornerRadius="@dimen/cardview_default_radius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro"
+            android:letterSpacing="0.1"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilNombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:layout_marginTop="56dp"
-        android:hint="Nombre"
-        app:helperText="Obligatorio"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:startIconDrawable="@drawable/ic_person"
-        tools:layout_editor_absoluteX="19dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtNombre"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName|textCapWords" />
+            android:layout_margin="18dp"
+            android:hint="Nombre"
+            android:textColorHint="@color/black"
+            app:helperTextTextColor="@color/black"
+            app:helperText="Obligatorio"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/design_default_color_secondary_variant"
+            tools:layout_editor_absoluteX="19dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                android:textColorHint="@color/black" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilApellido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:hint="Apellidos"
-        app:helperText="Obligatorio"
-        app:layout_constraintTop_toBottomOf="@+id/tilNombre"
-        app:startIconDrawable="@drawable/ic_person"
-        tools:layout_editor_absoluteX="29dp">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtApellido"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName|textCapWords" />
+            android:layout_margin="18dp"
+            android:hint="Apellidos"
+            android:textColorHint="@color/black"
+            app:helperTextTextColor="@color/black"
+            app:helperText="Obligatorio"
+            app:layout_constraintTop_toBottomOf="@+id/tilNombre"
+            app:startIconDrawable="@drawable/ic_person"
+            app:startIconTint="@color/design_default_color_secondary_variant"
+            tools:layout_editor_absoluteX="29dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                android:textColorHint="@color/black" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilemail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:hint="Email"
+        </com.google.android.material.textfield.TextInputLayout>
 
-        app:helperText="Obligatorio"
-
-        app:layout_constraintTop_toBottomOf="@+id/tilApellido"
-        app:startIconDrawable="@drawable/ic_email"
-        tools:layout_editor_absoluteX="-16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtemail"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName|textCapWords" />
+            android:layout_margin="18dp"
+            android:hint="Email"
+            android:textColorHint="@color/black"
+            app:helperTextTextColor="@color/black"
+            app:helperText="Obligatorio"
+            app:layout_constraintTop_toBottomOf="@+id/tilApellido"
+            app:startIconDrawable="@drawable/ic_email"
+            app:startIconTint="@color/design_default_color_secondary_variant"
+            tools:layout_editor_absoluteX="-16dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:layout_marginTop="252dp"
-        android:hint="Contraseña"
-        app:helperText="Obligatorio"
+        </com.google.android.material.textfield.TextInputLayout>
 
-        app:layout_constraintTop_toBottomOf="@+id/tilemail"
-        app:startIconDrawable="@drawable/ic_password"
-        tools:layout_editor_absoluteX="18dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtPäss"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName|textCapWords" />
+            android:layout_margin="18dp"
+            android:layout_marginTop="252dp"
+            android:hint="Contraseña"
+            android:textColorHint="@color/black"
+            app:helperTextTextColor="@color/black"
+            app:helperText="Obligatorio"
+            app:layout_constraintTop_toBottomOf="@+id/tilemail"
+            app:startIconDrawable="@drawable/ic_password"
+            app:startIconTint="@color/design_default_color_secondary_variant"
+            app:passwordToggleTint="@color/design_default_color_secondary_variant"
+            app:passwordToggleEnabled="true"
+            tools:layout_editor_absoluteX="18dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPäss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPass1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="18dp"
-        android:hint="Confirmar Contraseña"
-        app:helperText="Obligatorio"
+        </com.google.android.material.textfield.TextInputLayout>
 
-        app:layout_constraintTop_toBottomOf="@+id/tilPass"
-        app:startIconDrawable="@drawable/ic_password"
-        tools:layout_editor_absoluteX="28dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtPäss1"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPass1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName|textCapWords" />
+            android:layout_margin="18dp"
+            android:hint="Confirmar contraseña"
+            android:textColorHint="@color/black"
+            app:helperTextTextColor="@color/black"
+            app:helperText="Obligatorio"
+            app:layout_constraintTop_toBottomOf="@+id/tilPass"
+            app:startIconDrawable="@drawable/ic_password"
+            app:startIconTint="@color/design_default_color_secondary_variant"
+            app:passwordToggleTint="@color/design_default_color_secondary_variant"
+            app:passwordToggleEnabled="true"
+            tools:layout_editor_absoluteX="0dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPäss1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColorHint="@color/black"
+                android:textColor="@color/black" />
 
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="Iniciar Sesión"
+            android:textAlignment="center"
+            android:textFontWeight="@integer/material_motion_duration_long_2"
+            app:cornerRadius="@dimen/cardview_default_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_height="50dp"
+            android:text="Registrarse"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:textFontWeight="@integer/material_motion_duration_long_2"
+            app:cornerRadius="@dimen/cardview_default_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilPass1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
